@@ -22,6 +22,7 @@ public class BotHardware {
         fr = new Motor(hardwareMap, "frontRight");
         bl = new Motor(hardwareMap, "backLeft");
         br = new Motor(hardwareMap, "backRight");
+        fl.setInverted(true);
 
         drive = new MecanumDrive(fl, fr, bl, br);
 
