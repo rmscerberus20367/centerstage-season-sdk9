@@ -14,8 +14,8 @@ import org.opencv.imgproc.Imgproc;
 
 public class SpikeProcessor implements VisionProcessor {
     public Rect rectLeft = new Rect( 0,150,40,200);
-    public Rect rectCenter = new Rect(349,150,40,200);
-    public Rect rectRight = new Rect(599,40,40,400);
+    public Rect rectCenter = new Rect(229,150,40,200);
+    public Rect rectRight = new Rect(599,150,40,200);
     Selected selection = Selected.NONE;
     Mat submat = new Mat();
     Mat hsvMat = new Mat();
@@ -34,21 +34,22 @@ public class SpikeProcessor implements VisionProcessor {
     Mat chR = new Mat();
     Mat chG = new Mat();
     Mat chB = new Mat();
-    double satRectLeft;
+    double satRectRight;
+    double satRectCenter;
     @Override
     public Object processFrame(Mat frame, long captureTimeNanos) {
         Imgproc.cvtColor(frame, hsvMat, Imgproc.COLOR_RGB2HSV);
 
-        satRectLeft = getAvgSaturation(hsvMat, rectLeft);
-        double satRectCenter = getAvgSaturation(hsvMat, rectCenter);
-        double satRectRight = getAvgSaturation(hsvMat, rectRight);
+        double satRectLeft = getAvgSaturation(hsvMat, rectLeft);
+        satRectCenter = getAvgSaturation(hsvMat, rectCenter);
+        satRectRight = getAvgSaturation(hsvMat, rectRight);
 
-        if ((satRectLeft > 120) && (satRectCenter< 120)) {
-            return Selected.LEFT;
-        } else if ((satRectCenter > 120)) {
+        if ((satRectRight > 80) && (satRectCenter < 80)) {
+            return Selected.RIGHT;
+        } else if ((satRectCenter > 50)) {
             return Selected.CENTER;
         }
-        return Selected.RIGHT;
+        return Selected.LEFT;
 
 //        Core.extractChannel(frame, chR, 0);
 //        Core.extractChannel(frame, chG, 1);

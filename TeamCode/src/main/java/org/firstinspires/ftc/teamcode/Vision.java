@@ -54,7 +54,8 @@ public class Vision extends LinearOpMode {
                 case NONE:
                     break;
             }
-            telemetry.addData("a", spikeProcessor.satRectLeft);
+            telemetry.addData("r", spikeProcessor.satRectRight);
+            telemetry.addData("c", spikeProcessor.satRectCenter);
             telemetry.update();
             if (tagProcessor.getDetections().size() > 0){
                 for (int i = 0; i<tagProcessor.getDetections().size(); i++) {
