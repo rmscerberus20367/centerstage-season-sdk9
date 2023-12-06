@@ -35,12 +35,29 @@ public class MyOpMode extends LinearOpMode {
                 .addDisplacementMarker(() -> {
                     gripTilt.setPosition(0);
                 })
-                .lineToLinearHeading(new Pose2d(12, -40, Math.toRadians(90)))
+                //.lineToLinearHeading(new Pose2d(12, -42, Math.toRadians(90)))
+                .lineToLinearHeading(new Pose2d(24, -48, Math.toRadians(90)))
                 .addDisplacementMarker(() -> {
                     gripLeft.setPosition(0.5);
                 })
-                .waitSeconds(4)
-                .lineToLinearHeading(new Pose2d(48, -40, Math.toRadians(180)))
+                .waitSeconds(3)
+                .addDisplacementMarker(() -> {
+                    gripTilt.setPosition(0.5);
+                    depositTiltRight.setPosition(0);
+                    depositTiltLeft.setPosition(1);
+                    leftSlide.setTargetPosition(625);
+                    rightSlide.setTargetPosition(625);
+                    leftSlide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                    rightSlide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                    leftSlide.setPower(0.5);
+                    rightSlide.setPower(0.5);
+                })
+                .lineToLinearHeading(new Pose2d(50, -36, Math.toRadians(180)))
+                .strafeLeft(6)
+                //.strafeRight(6)
+                .addDisplacementMarker(() -> {
+                    gripRight.setPosition(0.5);
+                })
                 .waitSeconds(3)
                 .forward(3)
                 .strafeRight(27)

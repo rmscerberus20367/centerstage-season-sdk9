@@ -43,21 +43,21 @@ public class BlueNearPath extends LinearOpMode {
                 .build();
         ElapsedTime timer = new ElapsedTime();
         TrajectorySequence traj1 = drive.trajectorySequenceBuilder(startPose)
+                .strafeRight(10)
                 .back(5)
                 .turn(Math.toRadians(180))
-                .addDisplacementMarker(() -> {
-                    gripTilt.setPosition(0);
-                })
+
                 .build();
         TrajectorySequence traj1center = drive.trajectorySequenceBuilder(traj1.end())
-                .lineToLinearHeading(new Pose2d(12, 43, Math.toRadians(270)))
+                .lineToLinearHeading(new Pose2d(12, 42, Math.toRadians(90)))
                 .build();
         TrajectorySequence traj1left = drive.trajectorySequenceBuilder(traj1.end())
-                .lineToLinearHeading(new Pose2d(24, 47, Math.toRadians(270)))
+                .lineToLinearHeading(new Pose2d(26.5, 49, Math.toRadians(90)))
                 .build();
         TrajectorySequence traj1right = drive.trajectorySequenceBuilder(traj1.end())
-                .lineToLinearHeading(new Pose2d(24, 47, Math.toRadians(270)))
-                .turn(Math.toRadians(-90))
+                .lineToLinearHeading(new Pose2d(25, 41, Math.toRadians(90)))
+                .turn(Math.toRadians(90))
+                .forward(4)
 
                 .build();
 
@@ -66,7 +66,7 @@ public class BlueNearPath extends LinearOpMode {
         gripRight.setPosition(0.675);
         depositTiltRight.setPosition(0.725);
         depositTiltLeft.setPosition(0.275);
-        gripTilt.setPosition(0.5);
+        gripTilt.setPosition(0.6);
         while (!isStarted() && !isStopRequested()){
             telemetry.addData("SpikeAnswer", spikeProcessor.getAnswer());
             telemetry.update();
@@ -91,6 +91,7 @@ public class BlueNearPath extends LinearOpMode {
         drive.setPoseEstimate(startPose);
 
         drive.followTrajectorySequence(traj1);
+        gripTilt.setPosition(0);
         switch (targetTagID){
             case 1:
                 drive.followTrajectorySequence(traj1left);
@@ -106,7 +107,7 @@ public class BlueNearPath extends LinearOpMode {
                 break;
         }
         timer.reset();
-        gripRight.setPosition(0.5);
+        gripLeft.setPosition(0.5);
         TrajectorySequence traj2 = drive.trajectorySequenceBuilder(currentPose)
                 .back(5)
                 .addDisplacementMarker(() -> {
@@ -120,13 +121,13 @@ public class BlueNearPath extends LinearOpMode {
                     leftSlide.setPower(0.5);
                     rightSlide.setPower(0.5);
                 })
-                .lineToLinearHeading(new Pose2d(58.5, 43, Math.toRadians(180)))
+                .lineToLinearHeading(new Pose2d(58.5, 39, Math.toRadians(180)))
                 .build();
         TrajectorySequence traj2right = drive.trajectorySequenceBuilder(traj2.end())
                 .strafeLeft(7)
                 .build();
         TrajectorySequence traj2left = drive.trajectorySequenceBuilder(traj2.end())
-                .strafeRight(7)
+                .strafeRight(8)
                 .build();
 
         while (timer.seconds()<2){}
@@ -145,12 +146,12 @@ public class BlueNearPath extends LinearOpMode {
                 currentPose = traj2right.end();
                 break;
         }
-        gripLeft.setPosition(0.5);
+        gripRight.setPosition(0.5);
         timer.reset();
 
         TrajectorySequence traj3 = drive.trajectorySequenceBuilder(currentPose)
-                .forward(3)
-                .lineTo(new Vector2d(55.5, 23))
+                .forward(10)
+                .lineTo(new Vector2d(54, 18))
                 .back(7)
                 .build();
         while (timer.seconds()<2){}

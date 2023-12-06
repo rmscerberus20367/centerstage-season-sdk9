@@ -44,10 +44,10 @@ public class SpikeProcessor implements VisionProcessor {
         satRectCenter = getAvgSaturation(hsvMat, rectCenter);
         satRectRight = getAvgSaturation(hsvMat, rectRight);
 
-        if ((satRectRight > 80) && (satRectCenter < 80)) {
-            return Selected.RIGHT;
-        } else if ((satRectCenter > 50)) {
+        if ((satRectCenter > 100) && (satRectRight < 100)) {
             return Selected.CENTER;
+        } else if ((satRectRight > 90)) {
+            return Selected.RIGHT;
         }
         return Selected.LEFT;
 
