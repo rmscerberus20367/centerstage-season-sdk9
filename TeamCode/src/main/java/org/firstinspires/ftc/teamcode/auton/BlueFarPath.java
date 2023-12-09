@@ -51,19 +51,16 @@ public class BlueFarPath extends LinearOpMode {
                 })
                 .build();
         TrajectorySequence traj1center = drive.trajectorySequenceBuilder(traj.end())
-                .forward(12)
+                .forward(23.5)
                 .build();
         TrajectorySequence traj1right = drive.trajectorySequenceBuilder(traj.end())
-                .lineTo(new Vector2d(-48, -48))
+                .strafeRight(6)
+                .forward(20)
                 .build();
         TrajectorySequence traj1left = drive.trajectorySequenceBuilder(traj.end())
-                .forward(18)
+                .forward(19)
                 .turn(Math.toRadians(90))
                 .forward(4)
-                .addDisplacementMarker(()->{
-                    gripRight.setPosition(0.5);
-                })
-                .back(12)
                 .build();
 
 

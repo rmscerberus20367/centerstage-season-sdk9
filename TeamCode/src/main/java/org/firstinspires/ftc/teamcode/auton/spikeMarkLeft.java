@@ -107,8 +107,11 @@ public class spikeMarkLeft extends LinearOpMode {
         }
         timer.reset();
         gripLeft.setPosition(0.5);
-        while(timer.seconds()<3){
+        TrajectorySequence traj2 = drive.trajectorySequenceBuilder(currentPose)
+                .back(3)
+                .build();
+        while (timer.seconds()<2){}
 
-        }
+        drive.followTrajectorySequence(traj2);
     }
 }

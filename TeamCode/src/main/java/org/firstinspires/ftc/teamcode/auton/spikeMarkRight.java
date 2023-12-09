@@ -4,6 +4,7 @@ import android.util.Size;
 
 import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.acmerobotics.roadrunner.geometry.Vector2d;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -14,6 +15,8 @@ import org.firstinspires.ftc.teamcode.SpikeProcessor;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 import org.firstinspires.ftc.vision.VisionPortal;
+
+@Autonomous
 
 public class spikeMarkRight extends LinearOpMode {
     private int targetTagID = 2;
@@ -48,14 +51,14 @@ public class spikeMarkRight extends LinearOpMode {
                 })
                 .build();
         TrajectorySequence traj1center = drive.trajectorySequenceBuilder(traj.end())
-                .forward(12)
+                .forward(23.5)
                 .build();
         TrajectorySequence traj1right = drive.trajectorySequenceBuilder(traj.end())
-                .lineTo(new Vector2d(-48, -48))
-                .back(2)
+                .strafeRight(6)
+                .forward(20)
                 .build();
         TrajectorySequence traj1left = drive.trajectorySequenceBuilder(traj.end())
-                .forward(18)
+                .forward(19)
                 .turn(Math.toRadians(90))
                 .forward(4)
                 .build();
@@ -110,5 +113,8 @@ public class spikeMarkRight extends LinearOpMode {
         TrajectorySequence traj2 = drive.trajectorySequenceBuilder(currentPose)
                 .back(3)
                 .build();
+        while (timer.seconds()<2){}
+
+        drive.followTrajectorySequence(traj2);
     }
 }

@@ -1,19 +1,25 @@
 
 package org.firstinspires.ftc.teamcode.auton;
+import android.util.Size;
+
 import com.acmerobotics.roadrunner.geometry.Pose2d;
+import com.acmerobotics.roadrunner.geometry.Vector2d;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.teamcode.SpikeProcessor;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
+import org.firstinspires.ftc.vision.VisionPortal;
 
-@TeleOp(name = "RedNearPath")
+@Autonomous(name = "RedNearPath")
 public class RedNearPath extends LinearOpMode {
-    private int targetTagID = 0;
+    private int targetTagID = 2;
     @Override
     public void runOpMode() {
         SpikeProcessor spikeProcessor = new SpikeProcessor();
@@ -28,43 +34,58 @@ public class RedNearPath extends LinearOpMode {
         Servo depositTiltRight = hardwareMap.servo.get("depositTiltRight");
         Servo gripLeft = hardwareMap.servo.get("gripLeft");
         Servo gripRight = hardwareMap.servo.get("gripRight");
+        VisionPortal visionPortal = new VisionPortal.Builder()
+                //.addProcessor(tagProcessor)
+                .addProcessor(spikeProcessor)
+                .setCamera(hardwareMap.get(WebcamName.class, "Webcam 1"))
+                .setCameraResolution(new Size(640, 480))
+                .build();
         TrajectorySequence traj = drive.trajectorySequenceBuilder(startPose)
                 .back(5)
                 .turn(Math.toRadians(180))
-                .addDisplacementMarker(() -> {
+                .addTemporalMarker(2, () -> {
                     gripTilt.setPosition(0);
                 })
                 .build();
         TrajectorySequence traj1center = drive.trajectorySequenceBuilder(traj.end())
-
-                .lineToLinearHeading(new Pose2d(12, -42, Math.toRadians(90)))
+                .forward(23.5)
                 .build();
         TrajectorySequence traj1right = drive.trajectorySequenceBuilder(traj.end())
-                .lineToLinearHeading(new Pose2d(24, -48, Math.toRadians(90)))
+                .strafeRight(12.5)
+                .forward(20)
                 .build();
         TrajectorySequence traj1left = drive.trajectorySequenceBuilder(traj.end())
-                .forward(18)
+                .forward(24)
                 .turn(Math.toRadians(90))
                 .forward(4)
-                .addDisplacementMarker(()->{
-                    gripRight.setPosition(0.5);
-                })
-                .back(12)
                 .build();
-
 
 
 
 
 
         gripLeft.setPosition(0.325);
+        gripRight.setPosition(0.675);
         depositTiltRight.setPosition(0.7);
         depositTiltLeft.setPosition(0.3);
-        gripTilt.setPosition(0.5);
-        while (!isStarted() && !isStopRequested()){
-
+        gripTilt.setPosition(0.6);
+        while (!isStarted() && !isStopRequested()) {
+            telemetry.addData("SpikeAnswer", spikeProcessor.getAnswer());
+            telemetry.update();
+            switch (spikeProcessor.getAnswer()) {
+                case LEFT:
+                    targetTagID = 1;
+                    break;
+                case CENTER:
+                    targetTagID = 2;
+                    break;
+                case RIGHT:
+                    targetTagID = 3;
+                    break;
+                case NONE:
+                    break;
+            }
         }
-        waitForStart();
 
         if(isStopRequested()) return;
 
@@ -100,14 +121,16 @@ public class RedNearPath extends LinearOpMode {
                     leftSlide.setPower(0.5);
                     rightSlide.setPower(0.5);
                 })
-                .lineToLinearHeading(new Pose2d(50, -36, Math.toRadians(180)))
+                .lineToLinearHeading(new Pose2d(50, -32.5
+                        , Math.toRadians(180)))
                 .build();
         TrajectorySequence traj2right = drive.trajectorySequenceBuilder(traj2.end())
-                .strafeLeft(6)
+                .forward(1)
+                .strafeLeft(7.5)
 
                 .build();
         TrajectorySequence traj2left = drive.trajectorySequenceBuilder(traj2.end())
-                .strafeRight(6)
+                .strafeRight(10)
                 .build();
 
         while (timer.seconds()<2){}
@@ -130,9 +153,9 @@ public class RedNearPath extends LinearOpMode {
         timer.reset();
 
         TrajectorySequence traj3 = drive.trajectorySequenceBuilder(currentPose)
-                .forward(3)
-                .strafeRight(27)
-                .back(7)
+                .forward(15)
+                .lineTo(new Vector2d(40, -12))
+                .back(2)
                 .build();
         while (timer.seconds()<2){}
 
