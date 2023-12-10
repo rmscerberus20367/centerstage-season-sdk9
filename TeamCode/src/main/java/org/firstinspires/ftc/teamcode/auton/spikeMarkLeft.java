@@ -48,24 +48,24 @@ public class spikeMarkLeft extends LinearOpMode {
 
                 .build();
         TrajectorySequence traj1center = drive.trajectorySequenceBuilder(traj1.end())
-                .lineToLinearHeading(new Pose2d(12, 42, Math.toRadians(270)))
+                .lineToLinearHeading(new Pose2d(12, 31, Math.toRadians(270)))
                 .build();
         TrajectorySequence traj1left = drive.trajectorySequenceBuilder(traj1.end())
-                .lineToLinearHeading(new Pose2d(26.5, 49, Math.toRadians(270)))
+                .lineToLinearHeading(new Pose2d(25, 37, Math.toRadians(270)))
                 .build();
         TrajectorySequence traj1right = drive.trajectorySequenceBuilder(traj1.end())
-                .lineToLinearHeading(new Pose2d(25, 41, Math.toRadians(270)))
+                .lineToLinearHeading(new Pose2d(21, 35, Math.toRadians(270)))
                 .turn(Math.toRadians(-90))
-                .forward(4)
+                .forward(8)
 
                 .build();
 
 
         gripLeft.setPosition(0.325);
         gripRight.setPosition(0.675);
-        depositTiltRight.setPosition(0.725);
-        depositTiltLeft.setPosition(0.275);
-        gripTilt.setPosition(0.6);
+        depositTiltRight.setPosition(0.7);
+        depositTiltLeft.setPosition(0.3);
+        gripTilt.setPosition(0.7);
         while (!isStarted() && !isStopRequested()) {
             telemetry.addData("SpikeAnswer", spikeProcessor.getAnswer());
             telemetry.update();
