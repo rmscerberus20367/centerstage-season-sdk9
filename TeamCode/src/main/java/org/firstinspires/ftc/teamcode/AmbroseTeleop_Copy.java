@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@TeleOp(name = "TeleOpReal")
+@TeleOp(name = "🎃")
 public class AmbroseTeleop_Copy extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
