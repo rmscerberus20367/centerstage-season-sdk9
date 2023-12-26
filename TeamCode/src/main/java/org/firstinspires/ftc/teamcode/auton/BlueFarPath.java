@@ -20,6 +20,7 @@ import org.firstinspires.ftc.vision.VisionPortal;
 
 public class BlueFarPath extends LinearOpMode {
     private int targetTagID = 2;
+    int wait_time = 7;
     @Override
     public void runOpMode() {
         SpikeProcessor spikeProcessor = new SpikeProcessor();
@@ -54,15 +55,14 @@ public class BlueFarPath extends LinearOpMode {
                 .forward(23.5)
                 .build();
         TrajectorySequence traj1right = drive.trajectorySequenceBuilder(traj.end())
-                .strafeRight(6)
+                .strafeRight(8)
                 .forward(20)
                 .build();
         TrajectorySequence traj1left = drive.trajectorySequenceBuilder(traj.end())
-                .forward(19)
+                .forward(21)
                 .turn(Math.toRadians(90))
-                .forward(4)
+                .forward(3)
                 .build();
-
 
 
         gripLeft.setPosition(0.325);
@@ -70,6 +70,8 @@ public class BlueFarPath extends LinearOpMode {
         depositTiltRight.setPosition(0.7);
         depositTiltLeft.setPosition(0.3);
         gripTilt.setPosition(0.6);
+        leftSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         while (!isStarted() && !isStopRequested()) {
             telemetry.addData("SpikeAnswer", spikeProcessor.getAnswer());
             telemetry.update();
@@ -92,11 +94,13 @@ public class BlueFarPath extends LinearOpMode {
         if (isStopRequested()) return;
 
         drive.setPoseEstimate(startPose);
-
+        timer.reset();
+        while (timer.seconds()<wait_time){}
         drive.followTrajectorySequence(traj);
         gripTilt.setPosition(0);
-        switch (targetTagID){
-            case 1: drive.followTrajectorySequence(traj1left);
+        switch (targetTagID) {
+            case 1:
+                drive.followTrajectorySequence(traj1left);
                 currentPose = traj1left.end();
                 break;
             case 2:
@@ -111,10 +115,9 @@ public class BlueFarPath extends LinearOpMode {
         timer.reset();
         gripRight.setPosition(0.5);
         TrajectorySequence traj2 = drive.trajectorySequenceBuilder(currentPose)
-                .lineToLinearHeading(new Pose2d(-36, 60, Math.toRadians(180)))
-                .build();
-        TrajectorySequence traj3 = drive.trajectorySequenceBuilder(traj2.end())
-                .back(55)
+                .back(10)
+                .lineToLinearHeading(new Pose2d(-34, 56.5,Math.toRadians(180)))
+                .back(60)
                 .addDisplacementMarker(() -> {
                     gripTilt.setPosition(0.5);
                     depositTiltRight.setPosition(0);
@@ -126,29 +129,57 @@ public class BlueFarPath extends LinearOpMode {
                     leftSlide.setPower(0.5);
                     rightSlide.setPower(0.5);
                 })
-                .lineToLinearHeading(new Pose2d(58.5, 39, Math.toRadians(180)))
+                .lineToLinearHeading(new Pose2d(53, 35, Math.toRadians(180)))
                 .build();
-        TrajectorySequence traj3right = drive.trajectorySequenceBuilder(traj3.end())
+        TrajectorySequence traj2right = drive.trajectorySequenceBuilder(traj2.end())
                 .strafeLeft(7)
                 .build();
-        TrajectorySequence traj3left = drive.trajectorySequenceBuilder(traj3.end())
-                .strafeRight(8)
+        TrajectorySequence traj2left = drive.trajectorySequenceBuilder(traj2.end())
+                .forward(1)
+                .strafeRight(  7)
                 .build();
+
         while (timer.seconds()<2){}
+
         drive.followTrajectorySequence(traj2);
         switch (targetTagID){
             case 1:
-                drive.followTrajectorySequence(traj3left);
-                currentPose = traj3left.end();
+                drive.followTrajectorySequence(traj2left);
+                currentPose = traj2left.end();
+
+
                 break;
             case 2:
-                currentPose = traj3.end();
+                currentPose = traj2.end();
                 break;
             case 3:
-                drive.followTrajectorySequence(traj3right);
-                currentPose = traj3right.end();
+                drive.followTrajectorySequence(traj2right);
+                currentPose = traj2right.end();
                 break;
         }
+        gripLeft.setPosition(0.5);
+        timer.reset();
 
+        TrajectorySequence traj3 = drive.trajectorySequenceBuilder(currentPose)
+                .forward(5)
+                .build();
+        while (timer.seconds()<2){}
+
+
+        drive.followTrajectorySequence(traj3);
+
+        depositTiltRight.setPosition(0.725);
+        depositTiltLeft.setPosition(0.275);
+        leftSlide.setTargetPosition(0);
+        rightSlide.setTargetPosition(0);
+        leftSlide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        rightSlide.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        leftSlide.setPower(0.5);
+        rightSlide.setPower(0.5);
+        timer.reset();
+        gripLeft.setPosition(0.325);
+        gripRight.setPosition(0.675);
+
+        while (timer.seconds()<4){}
     }
 }

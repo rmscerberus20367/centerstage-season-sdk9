@@ -55,9 +55,9 @@ public class RedNearPath extends LinearOpMode {
                 .forward(20)
                 .build();
         TrajectorySequence traj1left = drive.trajectorySequenceBuilder(traj.end())
-                .forward(24)
+                .forward(26)
                 .turn(Math.toRadians(90))
-                .forward(4)
+                .forward(2)
                 .build();
 
 
@@ -69,6 +69,8 @@ public class RedNearPath extends LinearOpMode {
         depositTiltRight.setPosition(0.7);
         depositTiltLeft.setPosition(0.3);
         gripTilt.setPosition(0.6);
+        leftSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         while (!isStarted() && !isStopRequested()) {
             telemetry.addData("SpikeAnswer", spikeProcessor.getAnswer());
             telemetry.update();
@@ -121,7 +123,7 @@ public class RedNearPath extends LinearOpMode {
                     leftSlide.setPower(0.5);
                     rightSlide.setPower(0.5);
                 })
-                .lineToLinearHeading(new Pose2d(50, -32.5
+                .lineToLinearHeading(new Pose2d(50, -36.5
                         , Math.toRadians(180)))
                 .build();
         TrajectorySequence traj2right = drive.trajectorySequenceBuilder(traj2.end())
@@ -130,7 +132,7 @@ public class RedNearPath extends LinearOpMode {
 
                 .build();
         TrajectorySequence traj2left = drive.trajectorySequenceBuilder(traj2.end())
-                .strafeRight(10)
+                .strafeRight(9)
                 .build();
 
         while (timer.seconds()<2){}
@@ -154,8 +156,8 @@ public class RedNearPath extends LinearOpMode {
 
         TrajectorySequence traj3 = drive.trajectorySequenceBuilder(currentPose)
                 .forward(15)
-                .lineTo(new Vector2d(40, -12))
-                .back(2)
+                .lineTo(new Vector2d(40, -55))
+                .back(10)
                 .build();
         while (timer.seconds()<2){}
 

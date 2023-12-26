@@ -69,6 +69,8 @@ public class spikeMarkRight extends LinearOpMode {
         depositTiltRight.setPosition(0.7);
         depositTiltLeft.setPosition(0.3);
         gripTilt.setPosition(0.6);
+        leftSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         while (!isStarted() && !isStopRequested()) {
             telemetry.addData("SpikeAnswer", spikeProcessor.getAnswer());
             telemetry.update();

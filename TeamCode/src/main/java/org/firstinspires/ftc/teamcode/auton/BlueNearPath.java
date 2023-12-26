@@ -53,7 +53,7 @@ public class BlueNearPath extends LinearOpMode {
                 .lineToLinearHeading(new Pose2d(12, 31, Math.toRadians(270)))
                 .build();
         TrajectorySequence traj1left = drive.trajectorySequenceBuilder(traj1.end())
-                .lineToLinearHeading(new Pose2d(25, 37, Math.toRadians(270)))
+                .lineToLinearHeading(new Pose2d(23, 37, Math.toRadians(270)))
                 .build();
         TrajectorySequence traj1right = drive.trajectorySequenceBuilder(traj1.end())
                 .lineToLinearHeading(new Pose2d(21, 35, Math.toRadians(270)))
@@ -68,6 +68,8 @@ public class BlueNearPath extends LinearOpMode {
         depositTiltRight.setPosition(0.7);
         depositTiltLeft.setPosition(0.3);
         gripTilt.setPosition(0.7);
+        leftSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         while (!isStarted() && !isStopRequested()){
             telemetry.addData("SpikeAnswer", spikeProcessor.getAnswer());
             telemetry.update();
@@ -122,11 +124,11 @@ public class BlueNearPath extends LinearOpMode {
                     leftSlide.setPower(0.5);
                     rightSlide.setPower(0.5);
                 })
-                .lineToLinearHeading(new Pose2d(51, 33.5, Math.toRadians(180)))
+                .lineToLinearHeading(new Pose2d(52, 32.5, Math.toRadians(180)))
                 .addDisplacementMarker(() ->{gripLeft.setPosition(0.5);})
                 .build();
         TrajectorySequence traj2right = drive.trajectorySequenceBuilder(traj2.end())
-                .forward(1)
+                .forward(1.5)
                 .strafeLeft(7)
                 .build();
         TrajectorySequence traj2left = drive.trajectorySequenceBuilder(traj2.end())
@@ -154,8 +156,8 @@ public class BlueNearPath extends LinearOpMode {
 
         TrajectorySequence traj3 = drive.trajectorySequenceBuilder(currentPose)
                 .forward(10)
-                .lineTo(new Vector2d(50, 10))
-                .back(7)
+                .lineTo(new Vector2d(50, 8))
+                .back(5)
                 .build();
         while (timer.seconds()<2){}
 
@@ -171,6 +173,8 @@ public class BlueNearPath extends LinearOpMode {
         leftSlide.setPower(0.5);
         rightSlide.setPower(0.5);
         timer.reset();
+        gripLeft.setPosition(0.325);
+        gripRight.setPosition(0.675);
 
         while (timer.seconds()<4){}
 

@@ -24,11 +24,13 @@ public class AmbroseTeleop_Copy extends LinearOpMode {
         Servo depositTiltRight = hardwareMap.servo.get("depositTiltRight");
         Servo gripLeft = hardwareMap.servo.get("gripLeft");
         Servo gripRight = hardwareMap.servo.get("gripRight");
+        Servo drone  = hardwareMap.servo.get("gripRight");
         
         // Reverse the right side motors
         // Reverse left motors if you are using NeveRests
-        motorBackLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+        motorFrontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         motorFrontRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        drone.setPosition(0.5);
         
         
         waitForStart();
@@ -38,7 +40,7 @@ public class AmbroseTeleop_Copy extends LinearOpMode {
         while (opModeIsActive()) {
             double y = -gamepad1.left_stick_y; // Remember, this is reversed!
             double x = gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
-            double rx = gamepad1.right_stick_x;
+            double rx = gamepad1.right_stick_x/3    ;
 
             // Denominator is the largest motor power (absolute value) or 1
             // This ensures all the powers maintain the same ratio, but only when
@@ -60,7 +62,7 @@ public class AmbroseTeleop_Copy extends LinearOpMode {
                 gripLeft.setPosition(0.5);
             }
             else if (gamepad2.b) {
-                gripLeft.setPosition(0.325);
+                gripLeft.setPosition(0.3);
             }
              if (gamepad2.x) {
                 gripRight.setPosition(0.5);
@@ -81,6 +83,9 @@ public class AmbroseTeleop_Copy extends LinearOpMode {
             }
             if (gamepad2.dpad_right){
                 gripTilt.setPosition(0.5);
+            }
+            if (gamepad1.x){
+                drone.setPosition(1);
             }
             }
         }

@@ -21,14 +21,15 @@ import org.firstinspires.ftc.vision.VisionPortal;
 
 public class RedFarPath extends LinearOpMode {
     private int targetTagID = 2;
+    int wait_time = 5;
     @Override
     public void runOpMode() {
         SpikeProcessor spikeProcessor = new SpikeProcessor();
 
         SampleMecanumDrive drive = new SampleMecanumDrive(hardwareMap);
 
-        Pose2d startPose = new Pose2d(-24, -60, Math.toRadians(270));
-        Pose2d currentPose = new Pose2d(-24, -60, Math.toRadians(270));
+        Pose2d startPose = new Pose2d(-36, -60, Math.toRadians(270));
+        Pose2d currentPose = new Pose2d(-36, -60, Math.toRadians(270));
 
         DcMotor leftSlide = hardwareMap.dcMotor.get("leftSlide");
         DcMotor rightSlide = hardwareMap.dcMotor.get("rightSlide");
@@ -52,15 +53,16 @@ public class RedFarPath extends LinearOpMode {
                 .build();
         TrajectorySequence traj1center = drive.trajectorySequenceBuilder(traj1.end())
                 .forward(23.5)
+                .strafeRight(10)
                 .build();
         TrajectorySequence traj1left = drive.trajectorySequenceBuilder(traj1.end())
-                .lineToLinearHeading(new Pose2d(-26.5, -37, Math.toRadians(90)))
+                .strafeLeft(1)
+                .forward(20)
                 .build();
         TrajectorySequence traj1right = drive.trajectorySequenceBuilder(traj1.end())
-                .lineToLinearHeading(new Pose2d(-25, -40, Math.toRadians(90)))
+                .forward(21)
                 .turn(Math.toRadians(-90))
-                .forward(4)
-
+                .forward(10)
                 .build();
 
 
@@ -69,6 +71,8 @@ public class RedFarPath extends LinearOpMode {
         depositTiltRight.setPosition(0.725);
         depositTiltLeft.setPosition(0.275);
         gripTilt.setPosition(0.6);
+        leftSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         while (!isStarted() && !isStopRequested()) {
             telemetry.addData("SpikeAnswer", spikeProcessor.getAnswer());
             telemetry.update();
@@ -91,7 +95,8 @@ public class RedFarPath extends LinearOpMode {
         if (isStopRequested()) return;
 
         drive.setPoseEstimate(startPose);
-
+        timer.reset();
+        while (timer.seconds()<wait_time){}
         drive.followTrajectorySequence(traj1);
         gripTilt.setPosition(0);
         switch (targetTagID) {
@@ -111,9 +116,9 @@ public class RedFarPath extends LinearOpMode {
         timer.reset();
         gripLeft.setPosition(0.5);
         TrajectorySequence traj2 = drive.trajectorySequenceBuilder(currentPose)
-                .lineTo(new Vector2d(-24, -36))
-                .lineToLinearHeading(new Pose2d(-12, -60, 180))
-                .back(55)
+                .back(12)
+                .lineToLinearHeading(new Pose2d(-38, -55.25, Math.toRadians(180)))
+                .back(50)
                 .addDisplacementMarker(() -> {
                     gripTilt.setPosition(0.5);
                     depositTiltRight.setPosition(0);
@@ -129,12 +134,12 @@ public class RedFarPath extends LinearOpMode {
                         , Math.toRadians(180)))
                 .build();
         TrajectorySequence traj2right = drive.trajectorySequenceBuilder(traj2.end())
-                .forward(1)
-                .strafeLeft(7)
+                .forward(1.5)
+                .strafeLeft(7.5)
 
                 .build();
         TrajectorySequence traj2left = drive.trajectorySequenceBuilder(traj2.end())
-                .strafeRight(8)
+                .strafeRight(9)
                 .build();
 
         while (timer.seconds()<2){}
@@ -157,10 +162,7 @@ public class RedFarPath extends LinearOpMode {
         timer.reset();
 
         TrajectorySequence traj3 = drive.trajectorySequenceBuilder(currentPose)
-                .forward(7)
-                .lineToLinearHeading(new Pose2d(50, -24.5
-                        , Math.toRadians(180)))
-                .back(2)
+                .forward(5)
                 .build();
         while (timer.seconds()<2){}
 
@@ -176,6 +178,8 @@ public class RedFarPath extends LinearOpMode {
         leftSlide.setPower(0.5);
         rightSlide.setPower(0.5);
         timer.reset();
+        gripLeft.setPosition(0.325);
+        gripRight.setPosition(0.675);
 
         while (timer.seconds()<4){}
 
