@@ -8,6 +8,7 @@ MERGED from [:FtcRobotController] /Users/vibs/Desktop/centerstage-season-sdk9/Ft
 MERGED from [org.firstinspires.ftc:OnBotJava:9.0.1] /Users/vibs/.gradle/caches/transforms-3/b48fab3853691df14fc5f98ac0eed0e4/transformed/jetified-OnBotJava-9.0.1/AndroidManifest.xml:34:1-43:12
 MERGED from [org.firstinspires.ftc:Blocks:9.0.1] /Users/vibs/.gradle/caches/transforms-3/64e47fef94886260e7e2314e92e160c6/transformed/jetified-Blocks-9.0.1/AndroidManifest.xml:2:1-26:12
 MERGED from [com.acmerobotics.dashboard:dashboard:0.4.12] /Users/vibs/.gradle/caches/transforms-3/63dbb44caa0553503bd8bb1f317f8c62/transformed/jetified-dashboard-0.4.12/AndroidManifest.xml:2:1-9:12
+MERGED from [org.team11260:fast-load:0.1.2] /Users/vibs/.gradle/caches/transforms-3/8a7b76d5616244c17f480b0a5ce4c55f/transformed/jetified-fast-load-0.1.2/AndroidManifest.xml:2:1-7:12
 MERGED from [org.firstinspires.ftc:FtcCommon:9.0.1] /Users/vibs/.gradle/caches/transforms-3/c356b40a3595f2adb3d546d333fdf4de/transformed/jetified-FtcCommon-9.0.1/AndroidManifest.xml:3:1-174:12
 MERGED from [org.firstinspires.ftc:Inspection:9.0.1] /Users/vibs/.gradle/caches/transforms-3/fea5e8120cbdff1aea9d51b6fa87e0e7/transformed/jetified-Inspection-9.0.1/AndroidManifest.xml:2:1-32:12
 MERGED from [org.firstinspires.ftc:RobotServer:9.0.1] /Users/vibs/.gradle/caches/transforms-3/35aa6ecf48072086de41a8e521f446b8/transformed/jetified-RobotServer-9.0.1/AndroidManifest.xml:2:1-11:12
@@ -18,23 +19,25 @@ MERGED from [org.firstinspires.ftc:Tfod:9.0.1] /Users/vibs/.gradle/caches/transf
 MERGED from [org.firstinspires.ftc:gameAssets-CenterStage:1.0.0] /Users/vibs/.gradle/caches/transforms-3/23d4ddfcbe072c5344e6554db9480b09/transformed/jetified-gameAssets-CenterStage-1.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [org.tensorflow:tensorflow-lite-task-vision:0.4.3] /Users/vibs/.gradle/caches/transforms-3/e722e762881abe98ea31bf266b69a4c2/transformed/jetified-tensorflow-lite-task-vision-0.4.3/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/vibs/.gradle/caches/transforms-3/c6f9a08362f0b2ebd1f0ffa501e6b073/transformed/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [org.ftclib.ftclib:core:2.1.1] /Users/vibs/.gradle/caches/transforms-3/a9bf995e12ae4b29b61ea8bb6974e662/transformed/jetified-core-2.1.1/AndroidManifest.xml:2:1-11:12
 MERGED from [org.tensorflow:tensorflow-lite:2.12.0] /Users/vibs/.gradle/caches/transforms-3/3c270aebce2a0c27e9571cad265d204f/transformed/jetified-tensorflow-lite-2.12.0/AndroidManifest.xml:2:1-11:12
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /Users/vibs/.gradle/caches/transforms-3/77b030d33441ad2424efa99d4f05c37e/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:17:1-56:12
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.3.1] /Users/vibs/.gradle/caches/transforms-3/b55addf44cbfb7cef1f48f643cf871f7/transformed/jetified-threetenabp-1.3.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vibs/.gradle/caches/transforms-3/7d5ed51755467246fa60a0847437a02c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] /Users/vibs/.gradle/caches/transforms-3/5a6c3bdc4d162f256ce385235f9ca0fe/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/vibs/.gradle/caches/transforms-3/0de24351b70db0cc25397c9dbcae2c0f/transformed/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/vibs/.gradle/caches/transforms-3/521d89bd14f99e257d9292a164358d1f/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.6.0] /Users/vibs/.gradle/caches/transforms-3/d358673633e6ed678df398b4d252029b/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vibs/.gradle/caches/transforms-3/71beaf9b9515ee0c7b82a12d9c11e934/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/fa2ae729ac037a20b7f29cffc2f289bd/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vibs/.gradle/caches/transforms-3/6329d84e6a5e589c7fcd51f99ca5742a/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /Users/vibs/.gradle/caches/transforms-3/09071ac4a18d956eff0329dab7e76adf/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0] /Users/vibs/.gradle/caches/transforms-3/9acf6bb2d5e62220fd8b5dfd61754f8d/transformed/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vibs/.gradle/caches/transforms-3/71beaf9b9515ee0c7b82a12d9c11e934/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/fa2ae729ac037a20b7f29cffc2f289bd/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.0.0] /Users/vibs/.gradle/caches/transforms-3/878686f7fe31c295203f5db924f4f484/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.3.0] /Users/vibs/.gradle/caches/transforms-3/080f313e68143e30a4633ed9df16502e/transformed/core-1.3.0/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vibs/.gradle/caches/transforms-3/7d5ed51755467246fa60a0847437a02c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/cf8406776fd5b23f3359310765c2e504/transformed/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/vibs/.gradle/caches/transforms-3/aeeb515d6f65c495d431ba976039d139/transformed/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.6.0] /Users/vibs/.gradle/caches/transforms-3/036bfe9274e21ef3ad7c3f442f51022b/transformed/core-1.6.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vibs/.gradle/caches/transforms-3/86ae8d03a3e08cadc4d0a3bbfbf56999/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/vibs/.gradle/caches/transforms-3/dd0aa14225f65754ef54445e5454cc04/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/vibs/.gradle/caches/transforms-3/aeeb515d6f65c495d431ba976039d139/transformed/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/vibs/.gradle/caches/transforms-3/0543055cfe7aa0cbf0132f511f10fc30/transformed/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/vibs/.gradle/caches/transforms-3/b4f00a230fd6bea253cf2f0418a800f2/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/vibs/.gradle/caches/transforms-3/1d6a4aec74ff2eb0034023b506b257a6/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
@@ -47,6 +50,7 @@ MERGED from [org.tensorflow:tensorflow-lite-support-api:0.4.3] /Users/vibs/.grad
 MERGED from [org.tensorflow:tensorflow-lite-api:2.12.0] /Users/vibs/.gradle/caches/transforms-3/42d731ecd02b038366716d180221280a/transformed/jetified-tensorflow-lite-api-2.12.0/AndroidManifest.xml:2:1-11:12
 MERGED from [org.openftc:opencv-repackaged-bundled-dylibs:4.7.0-A] /Users/vibs/.gradle/caches/transforms-3/561415b838a86c1dd200218d280fef68/transformed/jetified-opencv-repackaged-bundled-dylibs-4.7.0-A/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/vibs/.gradle/caches/transforms-3/e12dc8ef7091a0cab0b9864c9c3e4577/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/vibs/.gradle/caches/transforms-3/ede68712d19ed1912d9955d39d8a9edf/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/vibs/Desktop/centerstage-season-sdk9/TeamCode/src/main/AndroidManifest.xml:8:1-11:12
 INJECTED from /Users/vibs/Desktop/centerstage-season-sdk9/TeamCode/src/main/AndroidManifest.xml:8:1-11:12
 INJECTED from /Users/vibs/Desktop/centerstage-season-sdk9/TeamCode/src/main/AndroidManifest.xml:8:1-11:12
@@ -82,10 +86,10 @@ MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /Users/vibs/.gradle/c
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /Users/vibs/.gradle/caches/transforms-3/77b030d33441ad2424efa99d4f05c37e/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:46:5-54:19
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.3.1] /Users/vibs/.gradle/caches/transforms-3/b55addf44cbfb7cef1f48f643cf871f7/transformed/jetified-threetenabp-1.3.1/AndroidManifest.xml:7:5-20
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.3.1] /Users/vibs/.gradle/caches/transforms-3/b55addf44cbfb7cef1f48f643cf871f7/transformed/jetified-threetenabp-1.3.1/AndroidManifest.xml:7:5-20
-MERGED from [androidx.core:core:1.3.0] /Users/vibs/.gradle/caches/transforms-3/080f313e68143e30a4633ed9df16502e/transformed/core-1.3.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.3.0] /Users/vibs/.gradle/caches/transforms-3/080f313e68143e30a4633ed9df16502e/transformed/core-1.3.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/cf8406776fd5b23f3359310765c2e504/transformed/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/cf8406776fd5b23f3359310765c2e504/transformed/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.core:core:1.6.0] /Users/vibs/.gradle/caches/transforms-3/036bfe9274e21ef3ad7c3f442f51022b/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0] /Users/vibs/.gradle/caches/transforms-3/036bfe9274e21ef3ad7c3f442f51022b/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vibs/.gradle/caches/transforms-3/86ae8d03a3e08cadc4d0a3bbfbf56999/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vibs/.gradle/caches/transforms-3/86ae8d03a3e08cadc4d0a3bbfbf56999/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [org.tensorflow:tensorflow-lite-task-base:0.4.3] /Users/vibs/.gradle/caches/transforms-3/a796c3971c3a8fc06c9bf1d05c4946ce/transformed/jetified-tensorflow-lite-task-base-0.4.3/AndroidManifest.xml:4:4-5:18
 MERGED from [org.tensorflow:tensorflow-lite-task-base:0.4.3] /Users/vibs/.gradle/caches/transforms-3/a796c3971c3a8fc06c9bf1d05c4946ce/transformed/jetified-tensorflow-lite-task-base-0.4.3/AndroidManifest.xml:4:4-5:18
 MERGED from [org.tensorflow:tensorflow-lite-api:2.12.0] /Users/vibs/.gradle/caches/transforms-3/42d731ecd02b038366716d180221280a/transformed/jetified-tensorflow-lite-api-2.12.0/AndroidManifest.xml:9:5-20
@@ -93,7 +97,7 @@ MERGED from [org.tensorflow:tensorflow-lite-api:2.12.0] /Users/vibs/.gradle/cach
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/vibs/.gradle/caches/transforms-3/e12dc8ef7091a0cab0b9864c9c3e4577/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/vibs/.gradle/caches/transforms-3/e12dc8ef7091a0cab0b9864c9c3e4577/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:7:5-20
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.3.0] /Users/vibs/.gradle/caches/transforms-3/080f313e68143e30a4633ed9df16502e/transformed/core-1.3.0/AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.6.0] /Users/vibs/.gradle/caches/transforms-3/036bfe9274e21ef3ad7c3f442f51022b/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
 	android:label
 		ADDED from [:FtcRobotController] /Users/vibs/Desktop/centerstage-season-sdk9/FtcRobotController/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:9-41
 	android:largeHeap
@@ -120,6 +124,8 @@ MERGED from [org.firstinspires.ftc:Blocks:9.0.1] /Users/vibs/.gradle/caches/tran
 MERGED from [org.firstinspires.ftc:Blocks:9.0.1] /Users/vibs/.gradle/caches/transforms-3/64e47fef94886260e7e2314e92e160c6/transformed/jetified-Blocks-9.0.1/AndroidManifest.xml:7:5-9:41
 MERGED from [com.acmerobotics.dashboard:dashboard:0.4.12] /Users/vibs/.gradle/caches/transforms-3/63dbb44caa0553503bd8bb1f317f8c62/transformed/jetified-dashboard-0.4.12/AndroidManifest.xml:5:5-7:41
 MERGED from [com.acmerobotics.dashboard:dashboard:0.4.12] /Users/vibs/.gradle/caches/transforms-3/63dbb44caa0553503bd8bb1f317f8c62/transformed/jetified-dashboard-0.4.12/AndroidManifest.xml:5:5-7:41
+MERGED from [org.team11260:fast-load:0.1.2] /Users/vibs/.gradle/caches/transforms-3/8a7b76d5616244c17f480b0a5ce4c55f/transformed/jetified-fast-load-0.1.2/AndroidManifest.xml:5:5-44
+MERGED from [org.team11260:fast-load:0.1.2] /Users/vibs/.gradle/caches/transforms-3/8a7b76d5616244c17f480b0a5ce4c55f/transformed/jetified-fast-load-0.1.2/AndroidManifest.xml:5:5-44
 MERGED from [org.firstinspires.ftc:FtcCommon:9.0.1] /Users/vibs/.gradle/caches/transforms-3/c356b40a3595f2adb3d546d333fdf4de/transformed/jetified-FtcCommon-9.0.1/AndroidManifest.xml:8:5-10:41
 MERGED from [org.firstinspires.ftc:FtcCommon:9.0.1] /Users/vibs/.gradle/caches/transforms-3/c356b40a3595f2adb3d546d333fdf4de/transformed/jetified-FtcCommon-9.0.1/AndroidManifest.xml:8:5-10:41
 MERGED from [org.firstinspires.ftc:Inspection:9.0.1] /Users/vibs/.gradle/caches/transforms-3/fea5e8120cbdff1aea9d51b6fa87e0e7/transformed/jetified-Inspection-9.0.1/AndroidManifest.xml:7:5-9:41
@@ -140,40 +146,44 @@ MERGED from [org.tensorflow:tensorflow-lite-task-vision:0.4.3] /Users/vibs/.grad
 MERGED from [org.tensorflow:tensorflow-lite-task-vision:0.4.3] /Users/vibs/.gradle/caches/transforms-3/e722e762881abe98ea31bf266b69a4c2/transformed/jetified-tensorflow-lite-task-vision-0.4.3/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/vibs/.gradle/caches/transforms-3/c6f9a08362f0b2ebd1f0ffa501e6b073/transformed/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/vibs/.gradle/caches/transforms-3/c6f9a08362f0b2ebd1f0ffa501e6b073/transformed/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [org.ftclib.ftclib:core:2.1.1] /Users/vibs/.gradle/caches/transforms-3/a9bf995e12ae4b29b61ea8bb6974e662/transformed/jetified-core-2.1.1/AndroidManifest.xml:7:5-9:41
+MERGED from [org.ftclib.ftclib:core:2.1.1] /Users/vibs/.gradle/caches/transforms-3/a9bf995e12ae4b29b61ea8bb6974e662/transformed/jetified-core-2.1.1/AndroidManifest.xml:7:5-9:41
 MERGED from [org.tensorflow:tensorflow-lite:2.12.0] /Users/vibs/.gradle/caches/transforms-3/3c270aebce2a0c27e9571cad265d204f/transformed/jetified-tensorflow-lite-2.12.0/AndroidManifest.xml:6:5-7:38
 MERGED from [org.tensorflow:tensorflow-lite:2.12.0] /Users/vibs/.gradle/caches/transforms-3/3c270aebce2a0c27e9571cad265d204f/transformed/jetified-tensorflow-lite-2.12.0/AndroidManifest.xml:6:5-7:38
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /Users/vibs/.gradle/caches/transforms-3/77b030d33441ad2424efa99d4f05c37e/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:20:5-44
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] /Users/vibs/.gradle/caches/transforms-3/77b030d33441ad2424efa99d4f05c37e/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:20:5-44
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.3.1] /Users/vibs/.gradle/caches/transforms-3/b55addf44cbfb7cef1f48f643cf871f7/transformed/jetified-threetenabp-1.3.1/AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.3.1] /Users/vibs/.gradle/caches/transforms-3/b55addf44cbfb7cef1f48f643cf871f7/transformed/jetified-threetenabp-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vibs/.gradle/caches/transforms-3/7d5ed51755467246fa60a0847437a02c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vibs/.gradle/caches/transforms-3/7d5ed51755467246fa60a0847437a02c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] /Users/vibs/.gradle/caches/transforms-3/5a6c3bdc4d162f256ce385235f9ca0fe/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] /Users/vibs/.gradle/caches/transforms-3/5a6c3bdc4d162f256ce385235f9ca0fe/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/vibs/.gradle/caches/transforms-3/0de24351b70db0cc25397c9dbcae2c0f/transformed/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/vibs/.gradle/caches/transforms-3/0de24351b70db0cc25397c9dbcae2c0f/transformed/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/vibs/.gradle/caches/transforms-3/521d89bd14f99e257d9292a164358d1f/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/vibs/.gradle/caches/transforms-3/521d89bd14f99e257d9292a164358d1f/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.6.0] /Users/vibs/.gradle/caches/transforms-3/d358673633e6ed678df398b4d252029b/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.6.0] /Users/vibs/.gradle/caches/transforms-3/d358673633e6ed678df398b4d252029b/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vibs/.gradle/caches/transforms-3/71beaf9b9515ee0c7b82a12d9c11e934/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vibs/.gradle/caches/transforms-3/71beaf9b9515ee0c7b82a12d9c11e934/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/fa2ae729ac037a20b7f29cffc2f289bd/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/fa2ae729ac037a20b7f29cffc2f289bd/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vibs/.gradle/caches/transforms-3/6329d84e6a5e589c7fcd51f99ca5742a/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/vibs/.gradle/caches/transforms-3/6329d84e6a5e589c7fcd51f99ca5742a/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /Users/vibs/.gradle/caches/transforms-3/09071ac4a18d956eff0329dab7e76adf/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /Users/vibs/.gradle/caches/transforms-3/09071ac4a18d956eff0329dab7e76adf/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.0.0] /Users/vibs/.gradle/caches/transforms-3/9acf6bb2d5e62220fd8b5dfd61754f8d/transformed/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.0.0] /Users/vibs/.gradle/caches/transforms-3/9acf6bb2d5e62220fd8b5dfd61754f8d/transformed/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vibs/.gradle/caches/transforms-3/71beaf9b9515ee0c7b82a12d9c11e934/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/vibs/.gradle/caches/transforms-3/71beaf9b9515ee0c7b82a12d9c11e934/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/fa2ae729ac037a20b7f29cffc2f289bd/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/fa2ae729ac037a20b7f29cffc2f289bd/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.0.0] /Users/vibs/.gradle/caches/transforms-3/878686f7fe31c295203f5db924f4f484/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /Users/vibs/.gradle/caches/transforms-3/878686f7fe31c295203f5db924f4f484/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.3.0] /Users/vibs/.gradle/caches/transforms-3/080f313e68143e30a4633ed9df16502e/transformed/core-1.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.3.0] /Users/vibs/.gradle/caches/transforms-3/080f313e68143e30a4633ed9df16502e/transformed/core-1.3.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vibs/.gradle/caches/transforms-3/7d5ed51755467246fa60a0847437a02c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/vibs/.gradle/caches/transforms-3/7d5ed51755467246fa60a0847437a02c/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/cf8406776fd5b23f3359310765c2e504/transformed/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/vibs/.gradle/caches/transforms-3/cf8406776fd5b23f3359310765c2e504/transformed/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/vibs/.gradle/caches/transforms-3/aeeb515d6f65c495d431ba976039d139/transformed/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/vibs/.gradle/caches/transforms-3/aeeb515d6f65c495d431ba976039d139/transformed/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.6.0] /Users/vibs/.gradle/caches/transforms-3/036bfe9274e21ef3ad7c3f442f51022b/transformed/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0] /Users/vibs/.gradle/caches/transforms-3/036bfe9274e21ef3ad7c3f442f51022b/transformed/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vibs/.gradle/caches/transforms-3/86ae8d03a3e08cadc4d0a3bbfbf56999/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vibs/.gradle/caches/transforms-3/86ae8d03a3e08cadc4d0a3bbfbf56999/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/vibs/.gradle/caches/transforms-3/dd0aa14225f65754ef54445e5454cc04/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/vibs/.gradle/caches/transforms-3/dd0aa14225f65754ef54445e5454cc04/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/vibs/.gradle/caches/transforms-3/aeeb515d6f65c495d431ba976039d139/transformed/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/vibs/.gradle/caches/transforms-3/aeeb515d6f65c495d431ba976039d139/transformed/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/vibs/.gradle/caches/transforms-3/0543055cfe7aa0cbf0132f511f10fc30/transformed/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/vibs/.gradle/caches/transforms-3/0543055cfe7aa0cbf0132f511f10fc30/transformed/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/vibs/.gradle/caches/transforms-3/b4f00a230fd6bea253cf2f0418a800f2/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
@@ -196,6 +206,8 @@ MERGED from [org.openftc:opencv-repackaged-bundled-dylibs:4.7.0-A] /Users/vibs/.
 MERGED from [org.openftc:opencv-repackaged-bundled-dylibs:4.7.0-A] /Users/vibs/.gradle/caches/transforms-3/561415b838a86c1dd200218d280fef68/transformed/jetified-opencv-repackaged-bundled-dylibs-4.7.0-A/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/vibs/.gradle/caches/transforms-3/e12dc8ef7091a0cab0b9864c9c3e4577/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/vibs/.gradle/caches/transforms-3/e12dc8ef7091a0cab0b9864c9c3e4577/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/vibs/.gradle/caches/transforms-3/ede68712d19ed1912d9955d39d8a9edf/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/vibs/.gradle/caches/transforms-3/ede68712d19ed1912d9955d39d8a9edf/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 INJECTED from /Users/vibs/Desktop/centerstage-season-sdk9/TeamCode/src/main/AndroidManifest.xml
 INJECTED from /Users/vibs/Desktop/centerstage-season-sdk9/TeamCode/src/main/AndroidManifest.xml
 	android:targetSdkVersion

@@ -30,6 +30,8 @@ public class AmbroseTeleop_Copy extends LinearOpMode {
         // Reverse left motors if you are using NeveRests
         motorFrontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         motorFrontRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftSlide.setDirection(DcMotorSimple.Direction.REVERSE);
+        rightSlide.setDirection(DcMotorSimple.Direction.REVERSE);
         drone.setPosition(0.5);
         
         
