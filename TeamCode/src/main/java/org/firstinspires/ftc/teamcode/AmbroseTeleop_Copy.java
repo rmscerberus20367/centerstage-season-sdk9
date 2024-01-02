@@ -64,7 +64,7 @@ public class AmbroseTeleop_Copy extends LinearOpMode {
                 gripLeft.setPosition(0.5);
             }
             else if (gamepad2.b) {
-                gripLeft.setPosition(0.3);
+                gripLeft.setPosition(0.325);
             }
              if (gamepad2.x) {
                 gripRight.setPosition(0.5);
@@ -73,22 +73,26 @@ public class AmbroseTeleop_Copy extends LinearOpMode {
                 gripRight.setPosition(0.675);
             }
             if (gamepad2.dpad_up){
-                depositTiltRight.setPosition(0);
-                depositTiltLeft.setPosition(1);
+                depositTiltRight.setPosition(0.3);
+                depositTiltLeft.setPosition(0.7);
+                gripTilt.setPosition(0.3);
             }
             if (gamepad2.dpad_down){
-                depositTiltRight.setPosition(0.7);
-                depositTiltLeft.setPosition(0.3);
+                depositTiltRight.setPosition(0.89);
+                depositTiltLeft.setPosition(0.11);
+                gripTilt.setPosition(0.15);
             }
             if (gamepad2.dpad_left){
-                gripTilt.setPosition(0);
+                gripTilt.setPosition(0.15);
             }
             if (gamepad2.dpad_right){
-                gripTilt.setPosition(0.5);
+                gripTilt.setPosition(0.95);
             }
             if (gamepad1.x){
                 drone.setPosition(1);
             }
+            telemetry.addData("pos", leftSlide.getCurrentPosition());
+            telemetry.update();
             }
         }
     }

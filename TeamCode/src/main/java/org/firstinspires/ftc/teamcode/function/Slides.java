@@ -10,10 +10,10 @@ public class Slides {
     int groundPos = 0;
     int pos1 = 625;
     int pos2 = 1000;
-    int pos3 = 1200;
+    int pos3 = 1400;
     int climb = 0;
-    int changeValue = 10;
-    int slidePos;
+    int changeValue = 5;
+    int slidePos = 0;
     public void init(HardwareMap hardwareMap){
         leftSlide = hardwareMap.dcMotor.get("leftSlide");
         rightSlide = hardwareMap.dcMotor.get("rightSlide");
@@ -40,11 +40,13 @@ public class Slides {
         slidePos = climb;
     }
     public void manualUp(){
-        slidePos = slidePos+changeValue;
+        if (leftSlide.getCurrentPosition()<1790) slidePos = slidePos+changeValue;
     }
     public void manualDown(){
-        slidePos = slidePos-changeValue;
+        if (leftSlide.getCurrentPosition()>10)slidePos = slidePos-changeValue;
     }
+
+
     public void update(){
         leftSlide.setTargetPosition(slidePos);
         rightSlide.setTargetPosition(slidePos);

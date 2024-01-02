@@ -9,11 +9,11 @@ public class Grip {
     ServoEx gripRight;
     double leftOpen = 0.5;
     double rightOpen = 0.5;
-    double leftClose = 0;
-    double rightClose = 0;
+    double leftClose = 0.325;
+    double rightClose = 0.675;
 
-    double leftPos;
-    double rightPos;
+    public double leftPos = 0.5;
+    public double rightPos = 0.5;
 
 
 
@@ -40,17 +40,17 @@ public class Grip {
         rightPos = rightClose;
     }
 
-    public void switchStatesLeft(){
+    public void toggleLeft(){
         if (leftPos == leftOpen) closeLeft();
         else if (leftPos == leftClose) openLeft();
     }
-    public void switchStatesRight(){
+    public void toggleRight(){
         if (rightPos == rightOpen) closeRight();
         else if (rightPos == rightClose) openRight();
     }
-    public void switchStates(){
-        switchStatesLeft();
-        switchStatesRight();
+    public void toggleStates(){
+        toggleLeft();
+        toggleRight();
     }
 
     public void update(){

@@ -15,12 +15,14 @@ public class Pumpkin extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
-        GamepadEx gamepadEx = new GamepadEx(gamepad1);
+
         robot.init(hardwareMap);
         waitForStart();
         if (isStopRequested()) return;
         while (opModeIsActive()){
-            robot.update(gamepadEx, gamepadEx);
+            robot.update(gamepad1, gamepad1);
+            telemetry.addData("data", robot.slidePos);
+            telemetry.update();
         }
     }
 }

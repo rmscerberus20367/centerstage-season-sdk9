@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.function;
 import com.arcrobotics.ftclib.drivebase.MecanumDrive;
 import com.arcrobotics.ftclib.gamepad.GamepadEx;
 import com.arcrobotics.ftclib.hardware.motors.Motor;
+import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Drivetrain {
@@ -22,8 +23,8 @@ public class Drivetrain {
 
     }
 
-    public void update(GamepadEx gamepadEx){
-        mecanum.driveRobotCentric(gamepadEx.getLeftX(), gamepadEx.getLeftY(), gamepadEx.getRightX());
+    public void update(Gamepad gamepadEx){
+        mecanum.driveRobotCentric(gamepadEx.left_stick_x, gamepadEx.left_stick_y, gamepadEx.right_stick_x);
     }
 
 }
