@@ -25,10 +25,10 @@ public class RobotFunction {
     }
     public void update(Gamepad gamepad1, Gamepad gamepad2){
 
-        if (lb.wasJustPressed(gamepad2.left_bumper)){
+        if (rb.wasJustPressed(gamepad2.right_bumper)){
             claw.toggleLeft();
         }
-        if (rb.wasJustPressed(gamepad2.right_bumper)){
+        if (lb.wasJustPressed(gamepad2.left_bumper)){
             claw.toggleRight();
         }
         if (rs.wasJustPressed(gamepad2.right_stick_button)){

@@ -9,8 +9,8 @@ public class Slides {
     DcMotor rightSlide;
     int groundPos = 0;
     int pos1 = 625;
-    int pos2 = 1000;
-    int pos3 = 1400;
+    int pos2 = 1200;
+    int pos3 = 1800;
     int climb = 0;
     int changeValue = 5;
     int slidePos = 0;
@@ -40,7 +40,7 @@ public class Slides {
         slidePos = climb;
     }
     public void manualUp(){
-        if (leftSlide.getCurrentPosition()<1790) slidePos = slidePos+changeValue;
+        if (leftSlide.getCurrentPosition()<1990) slidePos = slidePos+changeValue;
     }
     public void manualDown(){
         if (leftSlide.getCurrentPosition()>10)slidePos = slidePos-changeValue;

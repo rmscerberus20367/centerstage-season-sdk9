@@ -24,7 +24,7 @@ public class Drivetrain {
     }
 
     public void update(Gamepad gamepadEx){
-        mecanum.driveRobotCentric(gamepadEx.left_stick_x, gamepadEx.left_stick_y, gamepadEx.right_stick_x);
+        mecanum.driveRobotCentric(gamepadEx.left_stick_x, -gamepadEx.left_stick_y, gamepadEx.right_stick_x/3);
     }
 
 }

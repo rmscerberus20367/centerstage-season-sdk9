@@ -20,7 +20,7 @@ public class Pumpkin extends LinearOpMode {
         waitForStart();
         if (isStopRequested()) return;
         while (opModeIsActive()){
-            robot.update(gamepad1, gamepad1);
+            robot.update(gamepad1, gamepad2);
             telemetry.addData("data", robot.slidePos);
             telemetry.update();
         }
