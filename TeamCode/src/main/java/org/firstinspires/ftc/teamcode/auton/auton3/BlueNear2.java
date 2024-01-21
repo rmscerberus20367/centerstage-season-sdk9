@@ -58,14 +58,8 @@ public class BlueNear2 extends LinearOpMode {
                     arm.intakePos();
                     arm.update();
                 })
-                .addDisplacementMarker( () -> {
-                   claw.openLeft();
-                   claw.update();
-                   arm.drivePos();
-                   arm.update();
-                   //timer.reset();
-                   //while (timer.seconds()<1){}
-                })
+                .build();
+        TrajectorySequence traj2center = drive.trajectorySequenceBuilder(traj1center.end())
                 
                 .back(5)
 
@@ -91,14 +85,8 @@ public class BlueNear2 extends LinearOpMode {
                     arm.intakePos();
                     arm.update();
                 })
-                .addDisplacementMarker( () -> {
-                    claw.openLeft();
-                    claw.update();
-                    arm.drivePos();
-                    arm.update();
-                    //timer.reset();
-                    //while (timer.seconds()<1){}
-                })
+                .build();
+        TrajectorySequence traj2left = drive.trajectorySequenceBuilder(traj1left.end())
                 
                 .back(5)
 
@@ -128,16 +116,8 @@ public class BlueNear2 extends LinearOpMode {
                     telemetry.update();
                 })
                 .forward(10)
-                .addDisplacementMarker( () -> {
-                    claw.openLeft();
-                    claw.update();
-                    arm.drivePos();
-                    arm.update();
-                    telemetry.addData("pose", drive.getPoseEstimate());
-                    telemetry.update();
-                    //timer.reset();
-                    //while (timer.seconds()<1){}
-                })
+                .build();
+        TrajectorySequence traj2right  = drive.trajectorySequenceBuilder(traj1right.end())
                 
                 .back(11)
 
@@ -209,6 +189,24 @@ public class BlueNear2 extends LinearOpMode {
                     break;
                 case 3:
                     drive.followTrajectorySequence(traj1right);
+
+                    break;
+            }
+            claw.openLeft();
+            claw.update();
+            timer.reset();
+            while (timer.seconds()<0.7){}
+            switch (targetTagID){
+                case 1:
+                    drive.followTrajectorySequence(traj2left);
+
+                    break;
+                case 2:
+                    drive.followTrajectorySequence(traj2center);
+
+                    break;
+                case 3:
+                    drive.followTrajectorySequence(traj2right);
 
                     break;
             }

@@ -26,6 +26,7 @@ public class RedFar2 extends LinearOpMode {
 
     Pose2d startPose = new Pose2d(-36, -64, Math.toRadians(270));
     ElapsedTime timer = new ElapsedTime();
+    int delay = 6;
     int targetTagID;
 
     @Override
@@ -47,33 +48,35 @@ public class RedFar2 extends LinearOpMode {
                 .build();
         TrajectorySequence traj1center = drive.trajectorySequenceBuilder(startPose)
                 .strafeRight(5)
-                .back(48)
+                .back(51)
                 .addDisplacementMarker(5, () -> {
                     arm.intakePos();
                     arm.update();
                 })
+                .build();
+        TrajectorySequence traj2center = drive.trajectorySequenceBuilder(traj1center.end())
                 .addDisplacementMarker( () -> {
-                    claw.openLeft();
-                    claw.update();
+
                     arm.drivePos();
                     arm.update();
                     //timer.reset();
                     //while (timer.seconds()<1){}
                 })
 
-                .back(4)
+                .back(1)
                 .addDisplacementMarker(() ->{
                     arm.drivePos();
                     arm.update();
                 })
                 .turn(Math.toRadians(-90))
+                .waitSeconds(delay)
                 .back(5)
                 .back(72)
-                .lineToLinearHeading(new Pose2d(46, -40, Math.toRadians(180)))
+                .lineToLinearHeading(new Pose2d(45, -41.6, Math.toRadians(180)))
 
                 .addDisplacementMarker(()->{
                     arm.depositPos();
-                    slides.slidePos = slides.pos1+30;
+                    slides.slidePos = slides.pos1+324;
                     slides.update();
                     arm.update();
                     timer.reset();
@@ -89,18 +92,19 @@ public class RedFar2 extends LinearOpMode {
 
                 .build();
         TrajectorySequence traj1right = drive.trajectorySequenceBuilder(startPose)
-                .strafeRight(5)
+                .strafeRight(7)
                 .back(34)
                 .turn(Math.toRadians(87))
-                .forward(3)
+                .forward(4.5)
 
                 .addDisplacementMarker(10, () -> {
                     arm.intakePos();
                     arm.update();
                 })
+                .build();
+        TrajectorySequence traj2right  = drive.trajectorySequenceBuilder(traj1right.end())
                 .addDisplacementMarker( () -> {
-                    claw.openLeft();
-                    claw.update();
+
                     arm.drivePos();
                     arm.update();
                     //timer.reset();
@@ -110,12 +114,13 @@ public class RedFar2 extends LinearOpMode {
                 .turn(Math.toRadians(-87))
                 .back(18)
                 .turn(Math.toRadians(-90))
+                .waitSeconds(delay)
                 .back(5)
                 .back(72)
-                .lineToLinearHeading(new Pose2d(45, -45.5, Math.toRadians(180)))
+                .lineToLinearHeading(new Pose2d(45, -46, Math.toRadians(180)))
                 .addDisplacementMarker(()->{
                     arm.depositPos();
-                    slides.slidePos = slides.pos1+30;
+                    slides.slidePos = slides.pos1+324;
                     slides.update();
                     arm.update();
                     claw.closeLeft();
@@ -123,7 +128,7 @@ public class RedFar2 extends LinearOpMode {
                     timer.reset();
                     //while (timer.seconds()<1){}
                 })
-                .back(6)
+                .back(3)
 
 
 
@@ -138,9 +143,10 @@ public class RedFar2 extends LinearOpMode {
                     arm.intakePos();
                     arm.update();
                 })
+                .build();
+        TrajectorySequence traj2left = drive.trajectorySequenceBuilder(traj1left.end())
                 .addDisplacementMarker( () -> {
-                    claw.openLeft();
-                    claw.update();
+
                     arm.drivePos();
                     arm.update();
                     //timer.reset();
@@ -148,12 +154,13 @@ public class RedFar2 extends LinearOpMode {
                 })
                 .back(9)
                 .turn(Math.toRadians(-90))
+                .waitSeconds(delay)
                 .back(5)
                 .back(72)
-                .lineToLinearHeading(new Pose2d(46, -34, Math.toRadians(180)))
+                .lineToLinearHeading(new Pose2d(45, -34, Math.toRadians(180)))
                 .addDisplacementMarker(()->{
                     arm.depositPos();
-                    slides.slidePos = slides.pos1+30;
+                    slides.slidePos = slides.pos1+324;
                     slides.update();
                     arm.update();
                     claw.closeLeft();
@@ -209,7 +216,24 @@ public class RedFar2 extends LinearOpMode {
 
                     break;
             }
+            claw.openLeft();
+            claw.update();
+            timer.reset();
+            while (timer.seconds()<0.7){}
+            switch (targetTagID){
+                case 1:
+                    drive.followTrajectorySequence(traj2left);
 
+                    break;
+                case 2:
+                    drive.followTrajectorySequence(traj2center);
+
+                    break;
+                case 3:
+                    drive.followTrajectorySequence(traj2right);
+
+                    break;
+            }
         timer.reset();
             TrajectorySequence traj2 = drive.trajectorySequenceBuilder(drive.getPoseEstimate())
                     .forward(5)
@@ -226,9 +250,14 @@ public class RedFar2 extends LinearOpMode {
                     .build();
         claw.openRight();
         claw.update();
-        timer.reset();
+            timer.reset();
+            while (timer.seconds()<0.7){}
+            timer.reset();
+            slides.slidePos = slides.pos2+30;
+            slides.update();
+            timer.reset();
 
-        while (timer.seconds()<0){}
+        while (timer.seconds()<0.7){}
         drive.followTrajectorySequence(traj2);
         timer.reset();
         claw.openLeft();

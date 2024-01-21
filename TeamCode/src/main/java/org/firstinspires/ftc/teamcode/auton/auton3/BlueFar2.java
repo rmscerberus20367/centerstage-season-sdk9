@@ -26,6 +26,7 @@ public class BlueFar2 extends LinearOpMode {
     Pose2d startPose = new Pose2d(-36, 64, Math.toRadians(90));
     ElapsedTime timer = new ElapsedTime();
     int targetTagID;
+    int delay = 6;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -45,33 +46,31 @@ public class BlueFar2 extends LinearOpMode {
                 .setCameraResolution(new Size(640, 480))
                 .build();
         TrajectorySequence traj1center = drive.trajectorySequenceBuilder(startPose)
-                .back(48)
+                .back(51)
                 .addDisplacementMarker(5, () -> {
                     arm.intakePos();
                     arm.update();
                 })
-                .addDisplacementMarker( () -> {
-                    claw.openLeft();
-                    claw.update();
+                .build();
+        TrajectorySequence traj2center = drive.trajectorySequenceBuilder(traj1center.end())
+                .addDisplacementMarker(() ->{
                     arm.drivePos();
                     arm.update();
-                    //timer.reset();
-                    //while (timer.seconds()<1){}
                 })
-
                 .back(4)
                 .addDisplacementMarker(() ->{
                     arm.drivePos();
                     arm.update();
                 })
                 .turn(Math.toRadians(90))
+                .waitSeconds(delay)
                 .back(5)
                 .back(72)
                 .lineToLinearHeading(new Pose2d(48, 34, Math.toRadians(180)))
 
                 .addDisplacementMarker(()->{
                     arm.depositPos();
-                    slides.slidePos = slides.pos1+60;
+                    slides.slidePos = slides.pos1+342;
                     slides.update();
                     arm.update();
                     timer.reset();
@@ -87,31 +86,33 @@ public class BlueFar2 extends LinearOpMode {
 
                 .build();
         TrajectorySequence traj1left = drive.trajectorySequenceBuilder(startPose)
-                .back(34)
+
+                .back(33.5)
+                .strafeLeft(6)
                 .turn(Math.toRadians(-87))
+                .forward(6)
 
                 .addDisplacementMarker(5, () -> {
                     arm.intakePos();
                     arm.update();
                 })
-                .addDisplacementMarker( () -> {
-                    claw.openLeft();
-                    claw.update();
+                .build();
+        TrajectorySequence traj2left = drive.trajectorySequenceBuilder(traj1left.end())
+                .addDisplacementMarker(() ->{
                     arm.drivePos();
                     arm.update();
-                    //timer.reset();
-                    //while (timer.seconds()<1){}
                 })
-                .back(3)
+                .back(4.5)
                 .turn(Math.toRadians(87))
-                .back(18)
+                .back(15.5)
                 .turn(Math.toRadians(90))
+                .waitSeconds(delay)
                 .back(5)
                 .back(72)
-                .lineToLinearHeading(new Pose2d(48, 38, Math.toRadians(180)))
+                .lineToLinearHeading(new Pose2d(48, 39.5, Math.toRadians(180)))
                 .addDisplacementMarker(()->{
                     arm.depositPos();
-                    slides.slidePos = slides.pos1+60;
+                    slides.slidePos = slides.pos1+342;
                     slides.update();
                     arm.update();
                     claw.closeLeft();
@@ -127,28 +128,35 @@ public class BlueFar2 extends LinearOpMode {
 
                 .build();
         TrajectorySequence traj1right = drive.trajectorySequenceBuilder(startPose)
-                .back(40)
-                .strafeLeft(10)
-                .addDisplacementMarker(5, () -> {
+                .strafeLeft(9)
+                .back(43)
+
+                .addDisplacementMarker(10, () -> {
                     arm.intakePos();
                     arm.update();
                 })
-                .addDisplacementMarker( () -> {
-                    claw.openLeft();
-                    claw.update();
+                .build();
+        TrajectorySequence traj2right = drive.trajectorySequenceBuilder(traj1right.end())
+                .addDisplacementMarker(() ->{
                     arm.drivePos();
                     arm.update();
+                })
+                .back(7)
+                .addDisplacementMarker(2, () -> {
+                    arm.drivePos();
+                    arm.update();
+
                     //timer.reset();
                     //while (timer.seconds()<1){}
                 })
-                .back(10)
                 .turn(Math.toRadians(90))
+                .waitSeconds(delay)
                 .back(5)
                 .back(72)
-                .lineToLinearHeading(new Pose2d(48, 26.5, Math.toRadians(180)))
+                .lineToLinearHeading(new Pose2d(48, 27, Math.toRadians(180)))
                 .addDisplacementMarker(()->{
                     arm.depositPos();
-                    slides.slidePos = slides.pos1+60;
+                    slides.slidePos = slides.pos1+342;
                     slides.update();
                     arm.update();
                     claw.closeLeft();
@@ -204,12 +212,34 @@ public class BlueFar2 extends LinearOpMode {
 
                     break;
             }
+            claw.openLeft();
+            claw.update();
+            timer.reset();
+            while (timer.seconds()<0.7){}
+            switch (targetTagID){
+                case 1:
+                    drive.followTrajectorySequence(traj2left);
+
+                    break;
+                case 2:
+                    drive.followTrajectorySequence(traj2center);
+
+                    break;
+                case 3:
+                    drive.followTrajectorySequence(traj2right);
+
+                    break;
+            }
 
         timer.reset();
         while (timer.seconds()<1){}
         claw.openRight();
         claw.update();
-        timer.reset();
+            timer.reset();
+            while (timer.seconds()<0.7){}
+            timer.reset();
+            slides.slidePos = slides.pos1+342+30;
+            slides.update();
         TrajectorySequence traj2 = drive.trajectorySequenceBuilder(drive.getPoseEstimate())
                     .forward(5)
                     .addDisplacementMarker(2, ()->{
@@ -223,7 +253,6 @@ public class BlueFar2 extends LinearOpMode {
 
                     })
                     .build();
-        while (timer.seconds()<3){}
         drive.followTrajectorySequence(traj2);
         timer.reset();
         claw.openLeft();
