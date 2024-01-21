@@ -11,17 +11,17 @@ public class ArmWrist {
     ServoEx armRight;
     ServoEx wrist;
 
-    public double leftArmUp = 0.6;
-    double rightArmUp = 0.4;
-    double leftArmDown = 0.11;
-    double rightArmDown = 0.89;
+    public double leftArmUp = 0.75;
+    double rightArmUp = 0.25;
+    double leftArmDown = 0.27;
+    double rightArmDown = 0.73;
 
-    double wristGround = 0.735;
-    double wristDeposit = 0.2;
-    double wristDrive = 0.15;
-    double wristPos = 0.15;
-    public double leftArmPos = 0.11;
-    double rightArmPos = 0.89;
+    double wristGround = 0.76;
+    double wristDeposit = 0.25;
+    double wristDrive = 0.14;
+    double wristPos = wristDrive;
+    public double leftArmPos = leftArmDown;
+    double rightArmPos = rightArmDown;
     public void init(HardwareMap hardwareMap){
         armLeft = new SimpleServo(
                 hardwareMap, "depositTiltLeft",  0, 300

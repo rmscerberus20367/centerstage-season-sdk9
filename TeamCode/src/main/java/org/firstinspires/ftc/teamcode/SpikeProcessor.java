@@ -14,7 +14,7 @@ import org.opencv.imgproc.Imgproc;
 
 public class SpikeProcessor implements VisionProcessor {
     public Rect rectLeft = new Rect( 0,150,40,200);
-    public Rect rectCenter = new Rect(229,150,40,200);
+    public Rect rectCenter = new Rect(269,150,40,200);
     public Rect rectRight = new Rect(599,150,40,200);
     Selected selection = Selected.NONE;
     Mat submat = new Mat();

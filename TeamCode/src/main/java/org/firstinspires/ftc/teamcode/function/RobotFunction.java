@@ -36,6 +36,7 @@ public class RobotFunction {
         }
         if (lt.wasJustPressed(gamepad2.left_trigger)){
             if (arm.leftArmPos == arm.leftArmUp){
+
                 switch (slidePos){
 
                     case 1:

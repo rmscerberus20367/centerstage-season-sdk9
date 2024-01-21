@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -30,6 +31,7 @@ public class AmbroseTeleop_Copy extends LinearOpMode {
         // Reverse left motors if you are using NeveRests
         motorFrontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         motorFrontRight.setDirection(DcMotorSimple.Direction.REVERSE);
+        motorBackRight.setDirection(DcMotorEx.Direction.REVERSE);
         leftSlide.setDirection(DcMotorSimple.Direction.REVERSE);
         rightSlide.setDirection(DcMotorSimple.Direction.REVERSE);
         drone.setPosition(0.5);
@@ -78,8 +80,8 @@ public class AmbroseTeleop_Copy extends LinearOpMode {
                 gripTilt.setPosition(0.3);
             }
             if (gamepad2.dpad_down){
-                depositTiltRight.setPosition(0.89);
-                depositTiltLeft.setPosition(0.11);
+                depositTiltRight.setPosition(0.87);
+                depositTiltLeft.setPosition(0.13);
                 gripTilt.setPosition(0.15);
             }
             if (gamepad2.dpad_left){

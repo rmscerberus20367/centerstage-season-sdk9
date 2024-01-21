@@ -12,8 +12,8 @@ public class Grip {
     double leftClose = 0.325;
     double rightClose = 0.675;
 
-    public double leftPos = 0.5;
-    public double rightPos = 0.5;
+    public double leftPos = leftOpen;
+    public double rightPos = rightOpen;
 
 
 

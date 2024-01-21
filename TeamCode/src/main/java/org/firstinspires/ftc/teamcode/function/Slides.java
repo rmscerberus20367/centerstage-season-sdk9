@@ -8,12 +8,12 @@ public class Slides {
     DcMotor leftSlide;
     DcMotor rightSlide;
     int groundPos = 0;
-    int pos1 = 625;
-    int pos2 = 1200;
+    public int pos1 = 625;
+    public int pos2 = 1200;
     int pos3 = 1800;
     int climb = 0;
     int changeValue = 5;
-    int slidePos = 0;
+    public int slidePos = 0;
     public void init(HardwareMap hardwareMap){
         leftSlide = hardwareMap.dcMotor.get("leftSlide");
         rightSlide = hardwareMap.dcMotor.get("rightSlide");
