@@ -2,11 +2,16 @@ package org.firstinspires.ftc.teamcode;
 
 import android.util.Size;
 
+import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 //import org.firstinspires.ftc.teamcode.processor.SpikeProcessor;
+import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
+import org.firstinspires.ftc.teamcode.drive.SampleMecanumDriveCancelable;
+import org.firstinspires.ftc.teamcode.function.Average;
+import org.firstinspires.ftc.teamcode.function.RobotFunction;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 import org.firstinspires.ftc.vision.apriltag.AprilTagProcessor;
@@ -27,8 +32,8 @@ public class RobotLocalization extends LinearOpMode {
     private static double tagY3 = 29.61;//29.61; //blue right tagID = 3
     private static double tagY4 = -29.61; //red left tagID = 4
     private static double tagY5 = -35.60; //red center tagID = 5
-    private static double tagY6 = -62.34; //red right tagID = 6
-    private static double  dCamera = 0; //distance from center of robot to camera
+    private static double tagY6 = -41.65; //red right tagID = 6
+    private static double  dCamera = 8.5; //distance from center of robot to camera
 
     public static double[] getRobotXY(AprilTagDetection tag) {
         double[] robotXY = new double[8];
@@ -71,6 +76,86 @@ public class RobotLocalization extends LinearOpMode {
 
         return robotXY;
     }
+    public static Pose2d getRobotPose(AprilTagProcessor tagProcessor, SampleMecanumDrive drive) {
+        List<AprilTagDetection> currentDetections = tagProcessor.getDetections();
+
+        int numOfTags = 0;
+        for (AprilTagDetection tag : currentDetections) {
+            if (tag.metadata != null) {
+                numOfTags++;
+            }
+        }
+        if (numOfTags == 0){
+            return drive.getPoseEstimate();
+
+        }
+        else {
+            double[] robotX = new double[numOfTags];
+            double[] robotY = new double[numOfTags];
+
+            int curTag = 0;
+            for (AprilTagDetection tag : currentDetections) {
+                if (tag.metadata != null) {
+                    double[] robotXYthisTag = getRobotXY(tag);
+
+
+                    robotX[curTag] = robotXYthisTag[0];
+                    robotY[curTag] = robotXYthisTag[1];
+                    curTag++;
+
+
+                }
+            }
+            double x = Average.arrayavg(robotX);
+            double y = Average.arrayavg(robotY);
+
+            double h = drive.getPoseEstimate().getHeading();
+            Pose2d atagPose = new Pose2d(x, y, h);
+            drive.setPoseEstimate(atagPose);
+
+            return atagPose;
+        }
+    }
+    public static Pose2d getRobotPose(AprilTagProcessor tagProcessor, SampleMecanumDriveCancelable drive) {
+        List<AprilTagDetection> currentDetections = tagProcessor.getDetections();
+
+        int numOfTags = 0;
+        for (AprilTagDetection tag : currentDetections) {
+            if (tag.metadata != null) {
+                numOfTags++;
+            }
+        }
+        if (numOfTags == 0){
+            return drive.getPoseEstimate();
+
+        }
+        else {
+            double[] robotX = new double[numOfTags];
+            double[] robotY = new double[numOfTags];
+
+            int curTag = 0;
+            for (AprilTagDetection tag : currentDetections) {
+                if (tag.metadata != null) {
+                    double[] robotXYthisTag = getRobotXY(tag);
+
+
+                    robotX[curTag] = robotXYthisTag[0];
+                    robotY[curTag] = robotXYthisTag[1];
+                    curTag++;
+
+
+                }
+            }
+            double x = Average.arrayavg(robotX);
+            double y = Average.arrayavg(robotY);
+
+            double h = drive.getPoseEstimate().getHeading();
+            Pose2d atagPose = new Pose2d(x, y, h);
+            drive.setPoseEstimate(atagPose);
+
+            return atagPose;
+        }
+    }
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -83,6 +168,8 @@ public class RobotLocalization extends LinearOpMode {
                 .setDrawTagOutline(true)
                 .setLensIntrinsics(974.173, 974.173,277.586,251.531)
                 .build();
+        RobotFunction robot  = new RobotFunction();
+        robot.init(hardwareMap);
 
 
         VisionPortal visionPortal = new VisionPortal.Builder()
@@ -121,6 +208,7 @@ public class RobotLocalization extends LinearOpMode {
                     telemetry.addLine(String.format("Center %6.0f %6.0f   (pixels)", tag.center.x, tag.center.y));
                 }
             }
+            robot.update(gamepad1, gamepad1);
 
             telemetry.update();
         }

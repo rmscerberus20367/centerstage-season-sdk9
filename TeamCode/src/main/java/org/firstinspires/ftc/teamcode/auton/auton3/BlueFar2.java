@@ -4,6 +4,7 @@ import android.util.Size;
 
 import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -17,6 +18,7 @@ import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.firstinspires.ftc.vision.apriltag.AprilTagProcessor;
 @Autonomous
+@Disabled
 
 public class BlueFar2 extends LinearOpMode {
     Grip claw = new Grip();
@@ -68,7 +70,7 @@ public class BlueFar2 extends LinearOpMode {
                 .back(72)
                 .lineToLinearHeading(new Pose2d(48, 34, Math.toRadians(180)))
 
-                .addDisplacementMarker(()->{
+                .addDisplacementMarker(85, ()->{
                     arm.depositPos();
                     slides.slidePos = slides.pos1+342;
                     slides.update();
@@ -110,7 +112,7 @@ public class BlueFar2 extends LinearOpMode {
                 .back(5)
                 .back(72)
                 .lineToLinearHeading(new Pose2d(48, 39.5, Math.toRadians(180)))
-                .addDisplacementMarker(()->{
+                .addDisplacementMarker(85, ()->{
                     arm.depositPos();
                     slides.slidePos = slides.pos1+342;
                     slides.update();
@@ -154,7 +156,7 @@ public class BlueFar2 extends LinearOpMode {
                 .back(5)
                 .back(72)
                 .lineToLinearHeading(new Pose2d(48, 27, Math.toRadians(180)))
-                .addDisplacementMarker(()->{
+                .addDisplacementMarker(85, ()->{
                     arm.depositPos();
                     slides.slidePos = slides.pos1+342;
                     slides.update();

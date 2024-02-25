@@ -31,6 +31,7 @@ public class Pumpkin extends LinearOpMode {
             if (gamepad1.b){
                 drone.setPosition(0.5);
             }
+
             telemetry.update();
         }
     }

@@ -1,12 +1,16 @@
 package org.firstinspires.ftc.teamcode.function;
 
+import com.qualcomm.hardware.rev.RevBlinkinLedDriver;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.LightBlinker;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 public class RobotFunction {
     Grip claw  = new Grip();
     Drivetrain drive  = new Drivetrain();
-    Slides slides  = new Slides();
+    public Slides slides  = new Slides();
+    ElapsedTime timer = new ElapsedTime();
     ArmWrist arm  = new ArmWrist();
     KeyReader lb = new KeyReader();
     KeyReader rb = new KeyReader();
@@ -15,6 +19,7 @@ public class RobotFunction {
     KeyReader b = new KeyReader();
     TriggerReader lt = new TriggerReader();
     TriggerReader rt = new TriggerReader();
+    RevBlinkinLedDriver blinkin;
     public int slidePos = 0;
 
     public void init(HardwareMap hardwareMap){
@@ -22,6 +27,8 @@ public class RobotFunction {
         drive.init(hardwareMap);
         slides.init(hardwareMap);
         arm.init(hardwareMap);
+        blinkin = hardwareMap.get(RevBlinkinLedDriver.class, "blinkin");
+        timer.reset();
     }
     public void update(Gamepad gamepad1, Gamepad gamepad2){
 
@@ -76,6 +83,9 @@ public class RobotFunction {
         if (gamepad2.a){
             arm.intakePos();
         }
+        if (gamepad2.b){
+            arm.wristPos= arm.wristDeposit+0.1;
+        }
         if (gamepad2.dpad_up){
             slides.manualUp();
         }
@@ -86,6 +96,23 @@ public class RobotFunction {
         drive.update(gamepad1);
         slides.update();
         claw.update();
+
+        if (claw.leftPos == claw.leftOpen && claw.rightPos == claw.rightOpen && slidePos > 0 || claw.leftPos == claw.leftClose && claw.rightPos == claw.rightClose && slidePos == 0 && arm.wristPos == arm.wristGround){
+            blinkin.setPattern(RevBlinkinLedDriver.BlinkinPattern.GREEN);
+        }
+        else if (claw.leftPos == claw.leftOpen && claw.rightPos == claw.rightClose || claw.leftPos == claw.leftClose && claw.rightPos == claw.rightOpen){
+            blinkin.setPattern(RevBlinkinLedDriver.BlinkinPattern.YELLOW);
+        }
+        else {
+            if (timer.seconds()>90){
+                blinkin.setPattern(RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_RAINBOW_PALETTE);
+            }
+            else {
+                blinkin.setPattern(RevBlinkinLedDriver.BlinkinPattern.RED_ORANGE);
+            }
+        }
+
+
     }
 
 }

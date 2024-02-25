@@ -14,18 +14,19 @@ public class MyClass {
                 .setConstraints(60, 60, Math.toRadians(180), Math.toRadians(180), 15)
                 .followTrajectorySequence(drive ->
                         drive.trajectorySequenceBuilder(new Pose2d(-36, -64, Math.toRadians(270)))
-                                .back(48)
+                                .lineToLinearHeading(new Pose2d(48, 28, Math.toRadians(180)))
+
+                                .back(7)
+                                .forward(3)
+
+                                .splineToLinearHeading(new Pose2d(51, 12),  Math.toRadians(180))
 
 
-                                .back(4)
+                                .splineToLinearHeading(new Pose2d(-35,15), Math.toRadians(180))
 
-                                .turn(Math.toRadians(-90))
-                                .back(5)
-                                .back(72)
-                                .lineToLinearHeading(new Pose2d(46, -40, Math.toRadians(180)))
-
-
-                                .back(3)
+                                .forward(24)
+                                .splineToLinearHeading(new Pose2d(48, 35), Math.toRadians(180))
+                                .setTangent(0)
 
                                 .build()
                 );
